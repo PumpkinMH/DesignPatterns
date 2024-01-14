@@ -1,6 +1,8 @@
 package strategy;
 
-public interface ShootBehavior extends OffenceBehavior {
-    public String play();
+public class ShootBehavior implements OffenceBehavior {
+    public String play() {
+        return "Shoots at the goal";
+    }
     
 }

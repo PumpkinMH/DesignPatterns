@@ -5,9 +5,13 @@ public class Goalie extends Player {
         super(firstName, lastName);
     }
 
-    public void setOffenceBehavior() {}
+    public void setOffenceBehavior() {
+        offenceBehavior = new BlockGoalBehavior();
+    }
 
-    public void setDefenceBehavior() {}
+    public void setDefenceBehavior() {
+        defenceBehavior = new BlockGoalBehavior();
+    }
 
     public String toString() {
         String output = super.toString() + " plays the position: Goalie";

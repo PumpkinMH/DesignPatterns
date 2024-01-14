@@ -14,13 +14,20 @@ public abstract class Player {
     public Player(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        rand = new Random();
+        setOffenceBehavior();
+        setDefenceBehavior();
     }
 
     public abstract void setDefenceBehavior();
     public abstract void setOffenceBehavior();
     
     public String play(boolean possession) {
-
+        if(possession) {
+            return offenceBehavior.play();
+        } else {
+            return defenceBehavior.play();
+        }
     }
 
     public String toString() {

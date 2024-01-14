@@ -1,6 +1,8 @@
 package strategy;
 
-public interface SlapShotBehavior extends OffenceBehavior {
-    public String play();
+public class SlapShotBehavior implements OffenceBehavior {
+    public String play() {
+        return "Shoots the puck from the blue line";
+    }
     
 }

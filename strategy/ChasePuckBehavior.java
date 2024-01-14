@@ -1,5 +1,7 @@
 package strategy;
 
-public interface ChasePuckBehavior extends DefenceBehavior {
-    public String play();
+public class ChasePuckBehavior implements DefenceBehavior {
+    public String play() {
+        return "Chases the puck";
+    }
 }
