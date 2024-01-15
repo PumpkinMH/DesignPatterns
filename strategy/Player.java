@@ -63,8 +63,10 @@ public abstract class Player {
    */
   public String play(boolean possession) {
     if (possession) {
+      setOffenceBehavior();
       return offenceBehavior.play();
     } else {
+      setDefenceBehavior();
       return defenceBehavior.play();
     }
   }
