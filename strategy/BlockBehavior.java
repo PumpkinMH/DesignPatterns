@@ -3,6 +3,11 @@ package strategy;
 import java.util.Random;
 
 public class BlockBehavior implements DefenceBehavior {
+    /**
+     * Chooses one of three plays randomly.
+     * "Blocks player from passing", "blocks player from shooting", or "checks player with puck"
+     * @return String describing the play
+     */
     public String play() {
         Random random = new Random();
         int choice = random.nextInt(3);
