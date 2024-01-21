@@ -10,6 +10,7 @@ public class Police implements Observer {
 
     public Police(Subject cook) {
         this.cook = cook;
+        cook.registerObserver(this);
         locations = new ArrayList<String>();
         people = new ArrayList<String>();
         notes = "";

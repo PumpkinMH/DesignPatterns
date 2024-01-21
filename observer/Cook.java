@@ -35,6 +35,6 @@ public class Cook implements Subject {
     }
 
     public String getName() {
-        return new String(name);
+        return name;
     }
 }
