@@ -10,7 +10,7 @@ public class Police implements Observer {
 
     public Police(Subject cook) {
         this.cook = cook;
-        cook.registerObserver(this);
+        this.cook.registerObserver(this);
         locations = new ArrayList<String>();
         people = new ArrayList<String>();
         notes = "";
@@ -86,7 +86,9 @@ public class Police implements Observer {
             for(int i = 0; i < people.size(); i++) {
                 sb.append("- ");
                 sb.append(people.get(i));
-                sb.append('\n');
+                if(i < people.size() - 1) {
+                    sb.append('\n');
+                }
             }
         }
 
