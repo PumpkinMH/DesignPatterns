@@ -3,13 +3,25 @@ package decorator;
 import java.util.ArrayList;
 
 public abstract class PlayerDecorator extends Player {
+  /**
+   * Player representing the Player that will be decorated
+   */
   private Player player;
 
+  /**
+   * Constructor for PlayerDecorator
+   * @param player Player representing the Player that will be decorated
+   */
   public PlayerDecorator(Player player) {
     super(player.lines, player.name);
     this.player = player;
   }
 
+  /**
+   * Overwrites the lines of the Player with the lines of the decor when appropriate. 
+   * If the character in the decor is not a blank space, it will overwrite the respective character in the Player
+   * @param decor ArrayList of Strings representing the lines of the decorator.
+   */
   protected void integrateDecor(ArrayList<String> decor) {
     ArrayList<String> temp = new ArrayList<String>();
     ArrayList<String> biggestArray, smallestArray;
@@ -52,5 +64,4 @@ public abstract class PlayerDecorator extends Player {
     }
     lines = temp;
   }
-  
 }
