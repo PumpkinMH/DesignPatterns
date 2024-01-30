@@ -12,26 +12,26 @@ public abstract class PlayerDecorator extends Player {
 
   protected void integrateDecor(ArrayList<String> decor) {
     ArrayList<String> temp = new ArrayList<String>();
-    ArrayList<String> biggest, smallest;
+    ArrayList<String> biggestArray, smallestArray;
     if(lines.size() > decor.size()) {
-      biggest = lines;
-      smallest = decor;
+      biggestArray = lines;
+      smallestArray = decor;
     } else {
-      biggest = decor;
-      smallest = lines;
+      biggestArray = decor;
+      smallestArray = lines;
     }
 
-    for(int i = 0; i < biggest.size(); i++) {
-      if(i < smallest.size()) {
+    for(int i = 0; i < biggestArray.size(); i++) {
+      if(i < smallestArray.size()) {
         StringBuilder sb = new StringBuilder("");
         String biggestLine, smallestLine;
 
-        if(biggest.get(i).length() > smallest.get(i).length()) {
-          biggestLine = biggest.get(i);
-          smallestLine = smallest.get(i);
+        if(biggestArray.get(i).length() > smallestArray.get(i).length()) {
+          biggestLine = biggestArray.get(i);
+          smallestLine = smallestArray.get(i);
         } else {
-          biggestLine = smallest.get(i);
-          smallestLine = biggest.get(i);
+          biggestLine = smallestArray.get(i);
+          smallestLine = biggestArray.get(i);
         }
 
         for(int j = 0; j < biggestLine.length(); j++) {
@@ -47,7 +47,7 @@ public abstract class PlayerDecorator extends Player {
         }
         temp.add(sb.toString());
       } else {
-        temp.add(biggest.get(i));
+        temp.add(biggestArray.get(i));
       }
     }
     lines = temp;
