@@ -40,7 +40,9 @@ public class TaskList {
   }
 
   public String toString() {
-    String output = "";
+    String output = name;
+    output += '\n';
+    
     for(int i = 0; i < count; i++) {
       output += tickets[count].toString();
       if(i < count - 1) {
