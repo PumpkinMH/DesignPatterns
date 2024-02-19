@@ -14,7 +14,7 @@ public class TaskListIterator implements Iterator {
   }
 
   public boolean hasNext() {
-    return position < tickets.length - 1;
+    return position < tickets.length;
   }
 
   public Ticket next() {

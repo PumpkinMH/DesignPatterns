@@ -8,6 +8,7 @@ public class TaskList {
   public TaskList(String name) {
     this.name = name;
     tickets = new Ticket[0];
+    count = 0;
   }
 
   public void addTicket(String name, String teamMember, int difficulty) {
@@ -22,14 +23,15 @@ public class TaskList {
       for(int i = 0; i < count; i++) {
         tempTickets[i] = tickets[i];
       }
+      tickets = tempTickets;
       addTicket(ticket);
     }
   }
 
   public Ticket getTicket(String name) {
     for(int i = 0; i < count; i++) {
-      if(tickets[count].getName().equals(name)) {
-        return tickets[count];
+      if(tickets[i].getName().equalsIgnoreCase(name)) {
+        return tickets[i];
       }
     }
     return null;
@@ -41,10 +43,10 @@ public class TaskList {
 
   public String toString() {
     String output = name;
-    output += '\n';
-    
+    output += ":\n";
+
     for(int i = 0; i < count; i++) {
-      output += tickets[count].toString();
+      output += tickets[i].toString();
       if(i < count - 1) {
         output += '\n';
       }
